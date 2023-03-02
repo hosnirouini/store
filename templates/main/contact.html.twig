@@ -1,0 +1,151 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+        <div class="fixed-header-space"></div> <!-- empty placeholder div for Fixed Menu bar height-->
+
+        <!-- Start of Breadcrumbs -->
+        <div class="breadcrumb-section bgc-offset mb-full">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12">
+                        <nav class="breadcrumb">
+                            <a class="breadcrumb-item" href="index.html.twig">الصفحة الرئيسية</a>
+                            <span class="breadcrumb-item active">اتصل بنا
+</span>
+                        </nav>
+                    </div>
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div>
+        <!-- End of Breadcrumbs -->
+
+        
+
+        <!-- Start of Main Content Wrapper -->
+        <main id="content" class="main-content-wrapper page-about">
+            
+            <!-- Start of Contact Section -->
+            <section class="contact-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="mapouter">
+                               <!-- Start Map area -->
+							<div class="map-area">
+								<div id="googleMap" style="width:100%;height:350px;"></div>
+							</div>
+							<!-- End Map area -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="contact-form-wrapper">
+                                <div class="section-title left-aligned with-border">
+                                    <h2>ابقى على تواصل</h2>
+                                </div>
+                                <form id="contact-form" action="https://whizthemes.com/nazmul/php/mail.php" method="post">
+                                    <div class="form-row mb-2">
+                                        <div class="form-group col-12 col-sm-12 col-md-6">
+                                            <input type="text" name="name" class="form-control" id="com-name" placeholder="اسمك *" required>
+                                        </div>
+                                        <div class="form-group col-12 col-sm-12 col-md-6">
+                                            <input type="email" name="email" class="form-control" id="com-email" placeholder="بريدك الالكتروني *" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row mb-2">
+                                        <div class="form-group col-12 col-sm-12 col-md-12">
+                                            <input type="text" name="subject" class="form-control" id="subject" placeholder="موضوعك">
+                                        </div>
+                                    </div>
+                                    <div class="form-row mb-2">
+                                        <div class="form-group col-12 col-sm-12 col-md-12">
+                                            <textarea id="comment" placeholder="اكتب رسالتك ....." name="message" class="form-control" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-12 col-sm-12 col-md-12">
+                                            <button name="send_message" type="submit" class="btn btn-secondary">أرسل رسالتك</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p class="form-messege"></p>
+                            </div> <!-- end of contact-form-wrapper -->
+                        </div>
+                    </div> <!-- end of row -->
+                </div> <!-- end of container -->
+            </section>
+            <!-- End of Contact Section -->
+
+            <!-- Start of Team Section -->
+            <section class="team-section pt-full pb-half bgc-offset">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                            <div class="info-box">
+                                <div class="info-icon">
+                                    <i class="ion ion-md-locate"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>موقعنا</h4>
+                                    <p>دولة الكويت</p>
+                                    <p>الفروانية</p>
+                                </div>
+								
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                            <div class="info-box">
+                                <div class="info-icon">
+                                    <i class="ion ion-ios-call"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>اتصل بنا في أي وقت</h4>
+                                    <p>Mobile: <a href="#">(+965) 96967707</a></p>
+									<p>Mobile: <a href="#">(+965) 96967630</a></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+                            <div class="info-box">
+                                <div class="info-icon">
+                                    <i class="ion ion-md-mail-open"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>اكتب بعض الكلمات</h4>
+                                    <p><a href="#">info@harayerkw.com</a></p>
+                                    <p><a href="#">marketing@harayerkw.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end of row -->
+                </div> <!-- end of container -->
+            </section>
+            <!-- End of Team Section -->
+            
+
+           
+            <!-- Start of Newsletter Section -->
+            <section class="newsletter-section vpadding bgc-offset">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-7">
+                            <div class="newsletter-title d-lg-flex justify-content-lg-start">
+                                <h6>اشترك في الانستغرام </h6>
+                                <h3>اشترك في الانستغرام الخاص بنا وتعرف أولاً على جميع العروض الترويجية والخصومات. كن دائما على الموضة.</h3>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-5">
+                            <div class="newsletter-form-wrapper">
+                                <form action="index.html.twig" method="post">
+                                  
+                                    <input type="submit" class="default-btn" name="contact" value="Subscribe">
+                                </form>
+                            </div>
+                        </div>
+                    </div> <!-- end of row -->
+                </div> <!-- end of container -->
+            </section>
+            <!-- End of Newsletter Section -->
+        </main>
+        <!-- End of Main Content Wrapper -->
+
+   {% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+{% if app.user%}
+<a class="nav-link" href="#">Welcome  {{app.user.Username}}</a>
+<a class="btn btn-outline-success" href="{{path('app_logout')}}">logout</a>
+
+
+<a class="btn btn-outline-success" href="{{path('admin')}}">Admin</a>
+
+{% else %}
+<a class="btn btn-outline-success" href="{{path('app_login')}}">sign in</a>
+<a class="btn btn-outline-success" href="{{path('app_register')}}">sign up</a>
+{% endif %}
+
+
+{% endblock %}

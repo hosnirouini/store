@@ -1,19 +1,689 @@
 <!DOCTYPE html>
-<html>
+<html lang="zxx">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="robots" content="noindex, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.ico') }}">
+
+        <!-- CSS files
+        ============================================ -->
+        <!-- Plugins font  -->
+        <link rel="stylesheet" href="{{ asset('assets/css/plugins.css') }}">
+
+        <!-- Plugins font  -->
+
+
+
+
+        <!-- Boostrap stylesheet -->
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+
+        <!-- Icon Font CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/css/ionicons.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/pe-icon-7-stroke.css') }}">
+
+        <!-- Plugins stylesheet -->
+        <link rel="stylesheet" href="{{ asset('assets/css/plugins.css') }}">
+
+        <!-- Master stylesheet -->
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+        <!-- Responsive stylesheet -->
+        <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+        <script src="{{ asset('assets/js/modernizr-2.8.3.min.js') }}"></script>
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+            {#  {{ encore_entry_link_tags('app') }}#}
+
+
+
         {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+
     </head>
     <body>
+
+
+    <header class="header bgc-white header-type-1">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 order-2 col-sm-12 order-sm-2 col-md-8 order-md-1 align-self-center">
+                        <p style="color:red" size=""> <b>20٪ خصم. على الانترنت فقط</b></p>
+                    </div>
+                    <div class="col-12 order-1 col-sm-12 order-sm-1 col-md-4 order-md-2">
+                        <ul class="list-inline">
+                            <li class="currency list-inline-item">
+                                <div class="btn-group">
+                                    <button class="btn-link dropdown-toggle"> دينار الكويت <i class="fa fa-angle-down"></i></button>
+                                    <div class="dropdown-menu">
+                                        <ul>
+                                            <li><a href="#" class="current">ريال سعودي</a></li>
+                                            <li><a href="#">Euro €</a></li>
+                                            <li><a href="#">USD $</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="language list-inline-item">
+                                <div class="btn-group">
+                                    <button class="btn-link dropdown-toggle">عربي<i class="fa fa-angle-down"></i></button>
+                                    <div class="dropdown-menu">
+                                        <ul>
+                                            <li><a href="#" class="current"><img src="../../assets/images/icons/ar-gb.png" alt="Icons"> عربي</a></li>
+                                            <li><a href="#"><img src="../../assets/images/icons/en-gb.png" alt="Icons"> إنجليزي</a></li>
+                                            <li><a href="#"><img src="../../assets/images/icons/fr-fr.png" alt="Icons"> الفرنسية</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> <!-- end of container -->
+        </div> <!-- end of top-bar -->
+
+        <div class="header-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-6 order-2 col-sm-6 order-sm-2 col-md-4 order-md-1 col-lg-3">
+                        <div class="header-search-area">
+                            <form action="#">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="قعنا الإلكتروني ">
+                                    <div class="input-group-append">
+                                        <button class="header-search-btn" type="submit"><i class="pe-7s-search"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 order-1 col-sm-12 order-sm-1 col-md-4 order-md-2 col-lg-6">
+                        <div class="logo">
+                            <a href="{{ path('app_main') }}"><img src="../../assets/images/gold.png" alt="Logo" class="img-fluid" width="100" height="50"></a>
+                        </div>
+                    </div>
+                    <div class="col-6 order-3 col-sm-6 col-md-4 col-lg-3">
+                        <div class="header-cart-area">
+                            <div class="header-cart">
+                                <div class="btn-group">
+                                    <button class="btn-link dropdown-toggle icon-cart">
+                                        <i class="pe-7s-shopbag"></i>
+                                        <span class="count-style">2</span>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <div class="shopping-cart-content">
+                                            <ul class="list-unstyled">
+                                                <li class="single-cart-item media">
+                                                    <div class="shopping-cart-img me-4">
+                                                        <a href="#">
+                                                            <img class="img-fluid" alt="Cart Item" src="../../assets/images/cart/cart-1.jpg">
+                                                            <span class="product-quantity">1x</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="shopping-cart-title flex-grow-1">
+                                                        <h4><a href="#">عباية 70200799</a></h4>
+                                                        <p class="cart-price">50 KD</p>
+                                                        <div class="product-attr">
+                                                            <span>Size: S</span>
+                                                            <span>Color: Black</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="shopping-cart-delete">
+                                                        <a href="#"><i class="ion ion-md-close"></i></a>
+                                                    </div>
+                                                </li>
+                                                <li class="single-cart-item media">
+                                                    <div class="shopping-cart-img me-4">
+                                                        <a href="#">
+                                                            <img class="img-fluid" alt="Cart Item" src="../../assets/images/cart/cart-2.jpg">
+                                                            <span class="product-quantity">2x</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="shopping-cart-title flex-grow-1">
+                                                        <h4><a href="#">عباية 624014</a></h4>
+                                                        <p class="cart-price">30 KD</p>
+                                                        <div class="product-attr">
+                                                            <span>Color: White</span>
+                                                            <span>Accessories: Yes</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="shopping-cart-delete">
+                                                        <a href="#"><i class="ion ion-md-close"></i></a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="shopping-cart-total">
+                                                <h4>المجموع الفرعي: <span>320 KD</span></h4>
+                                                <h4>المجموع : : <span>320 KD</span></h4>
+                                            </div>
+                                            <div class="shopping-cart-btn">
+                                                <a class="default-btn" href="../hrayerkw/cart.html">عرض عربة التسوق</a>
+                                                <a class="default-btn" href="../hrayerkw/checkout.html">الدفع</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="list-inline">
+                                <li class="top-links list-inline-item">
+                                    <div class="btn-group">
+                                        <button class="btn-link dropdown-toggle"><i class="pe-7s-config"></i></button>
+                                        <div class="dropdown-menu">
+                                            <ul>
+                                                {% if app.user %}
+                                                    <li><a href="{{ path('app_my_account') }}">حسابي</a></li>
+                                                <li><a href="{{ path('app_logout') }}">اغلاق الحساب</a></li>
+                                                    {% if is_granted('ROLE_ADMIN') %}
+                                                        <li><a href="{{ path('admin') }}"> منصة التحكم</a></li>
+                                                        {% endif %}
+                                                    {% else %}
+                                                        <li><a href="{{ path('app_register') }}">إنشاء حساب</a></li>
+                                                        <li><a href="{{ path('app_login') }}">تسجيل الدخول</a></li>
+                                                {% endif %}
+
+                                                <li><a href="{{ path('app_cart') }}">قائمة الرغبات</a></li>
+                                                <li><a href="{{ path('app_checkout') }}">إتمام عملية الشراء</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> <!-- end of header-cart-area -->
+                    </div>
+                </div>
+            </div> <!-- end of container -->
+        </div> <!-- end of header-top -->
+
+
+
+        <!-- Start of Main and Mobile Navigation -->
+        <div class="main-nav-area bgc-white">
+            <div class="container">
+                <nav id="main_nav" class="stellarnav desktop"><a href="#" class="menu-toggle full"><i class="fa fa-bars"></i> Menu</a>
+                    <ul>
+                        <li class="active"><a href="{{ path('app_main') }}"><span><font size="4"><b>الصفحة الرئيسية</b></font></span></a>
+
+                        </li>
+                        <li class="mega has-sub" data-columns="4"><a href="../hrayerkw/shop-grid.html"><span><font size="4"><b>المتجر</b></font></span></a>
+                            <ul class="mega-container" style="left: 0px; max-width: 100%;">
+
+                                <li class="has-sub column column-3"><a href="#" class="mega-menu-title"><h3><font size="5"><b>عبايات</b></font></h3></a>
+                                    <ul style="max-width: 100%;">
+                                        <li><a href="{{ path('app_shop1') }}"><font size="4">عبايات ناعمة</font></a></li>
+                                        <li><a href="{{ path('app_shop') }}"><font size="4">عبايات مناسبات</font></a></li>
+                                        <li><a href="{{ path('app_shop') }}"><font size="4">عبايات ملونة</font></a></li>
+                                    </ul>
+                                    <a class="dd-toggle" href="#"><i class="fa fa-plus"></i></a></li>
+                                <li class="has-sub column column-3"><a href="#" class="mega-menu-title"><h3><font "="" size="5"><b>فساتين</b></font></h3></a>
+                                    <ul style="max-width: 100%;">
+                                        <li><a href="{{ path('app_shop') }}"><font size="4">فساتين المناسبات</font></a></li>
+                                        <li><a href="{{ path('app_shop') }}"><font size="4">دراعات</font></a></li>
+                                    </ul>
+                                    <a class="dd-toggle" href="#"><i class="fa fa-plus"></i></a></li>
+                                <li class="has-sub column column-3"><a href="#" class="mega-menu-title"><h3><font size="5"><b>عطور و الاكسسوارات</b></font></h3></a>
+                                    <ul style="max-width: 100%;">
+                                        <li><a href="{{ path('app_shop2') }}"><font size="4">عطور</font></a></li><li>
+                                        </li><li><a href="../hrayerkw/checkout.html"><font size="4">شيلة</font></a></li>
+                                        <li><a href="../hrayerkw/wishlist.html"><font size="4">نقاب</font></a></li>
+                                    </ul>
+                                    <a class="dd-toggle" href="#"><i class="fa fa-plus"></i></a></li>
+                                <li class="last has-sub column column-3"><a href="#" class="mega-menu-title"><h3><font size="5"><b>الدفع</b></font></h3></a>
+                                    <ul style="max-width: 100%;">
+                                        <li><a href="{{ path('app_cart') }}"><font size="4">صفحة البطاقة</font></a></li>
+                                        <li><a href="{{ path('app_checkout') }}"><font size="4">إتمام عملية الشراء</font></a></li>
+                                        <li><a href="{{ path('app_cart') }}"><font size="4">قائمة الرغبات</font></a></li>
+                                    </ul>
+                                    <a class="dd-toggle" href="#"><i class="fa fa-plus"></i></a></li>
+                                <li class="fullwidth-banner column column-3">
+                                    <a href="#"><img src="../../assets/images/banners/menu-banner.jpg" alt="Menu Banner"></a>
+                                </li>
+                            </ul>
+                            <a class="dd-toggle" href="#"><i class="fa fa-plus"></i></a></li>
+                        <li class="has-sub"><a href="#"><span><font size="4"><b>عروض</b></font></span></a>
+                            <ul>
+                                <li><a href="#"><font size="4">تخفيضات</font></a></li>
+                                <li><a href="#"><font size="4">كولكشن جديد</font></a></li>
+                                <li><a href="#"><font size="4">عروض</font></a></li>
+
+                            </ul>
+                            <a class="dd-toggle" href="#"><i class="fa fa-plus"></i></a></li>
+
+                        <li><a href="{{ path('app_about') }}"><span><font size="4"><b>عن لمسة حراير</b></font></span></a></li>
+                        <li><a href="{{ path('app_contact') }}"><span><font size="4"><b>اتصل بنا</b></font></span></a></li>
+                        <li class="has-sub"><a href="#"><span><font size="4"><b>صفحات مفيدة</b></font></span></a>
+                            <ul>
+                                {% if app.user %}
+                                    <li><a href="{{ path('app_my_account') }}"><font size="4">حسابي</font></a></li>
+                                <li><a href="{{ path('app_logout') }}"><font size="4">اغلاق الحساب</font></a></li>
+                                {% else %}
+                                <li><a href="{{ path('app_login') }}"><font size="4">تسجيل الدخول</font></a></li>
+                                <li><a href="{{ path('app_register') }}"><font size="4">إنشاء حساب</font></a></li>
+                                {% endif %}
+                                <li><a href="{{ path('app_sotres') }}"><font size="4">فروعنا</font></a></li>
+                                
+                                <li><a href="{{ path('app_faq') }}"><font size="4">أسئلة متكررة</font></a></li>
+
+                            </ul>
+                            <a class="dd-toggle" href="#"><i class="fa fa-plus"></i></a></li>
+                    </ul>
+                </nav>
+            </div> <!-- end of container -->
+        </div>
+        <!-- End of Main and Mobile Navigation -->
+    </header>
+
+
+
+
+
+
+
+
+
         {% block body %}{% endblock %}
+        {# {{ encore_entry_script_tags('app') }}#}
+
+
+
+
+
+    <footer id="colophon" class="bgc-secondary pt-full">
+
+        <!-- Footer Widgets Area -->
+        <div class="footer-widgets-area">
+            <div class="container">
+                <div class="footer-inner">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                            <aside class="widget-container">
+                                <div class="widget-content">
+                                    <div class="footer-logo mb-half">
+                                        <img src="../../assets/images/blanc.png" alt="Footer Logo" width="200" height="50">
+                                    </div>
+
+                                    <div class="footer-contact">
+
+                                        <p><span>Phone:</span><a href="#">(+965) 96967707</a></p>
+                                        <p><span>Email:</span><a href="#">info@harayerkw.com</a></p>
+                                    </div>
+                                </div> <!-- end of widget-content -->
+                            </aside> <!-- end of widget-container -->
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-6 order-md-3 col-lg-2 order-lg-2">
+                            <aside class="widget-container">
+                                <h4 class="widgettitle">منتجات</h4>
+                                <div class="widget-content">
+                                    <div class="widgetized-menu">
+                                        <ul class="list-unstyled">
+                                            <li><a href="#">الاكثر مبيعا</a></li>
+                                            <li><a href="#">منتجات جديدة</a></li>
+                                            <li><a href="#">منتجات مميزة</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div> <!-- end of widget-content -->
+                            </aside> <!-- end of widget-container -->
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-6 order-md-4 col-lg-2 order-lg-3">
+                            <aside class="widget-container">
+                                <h4 class="widgettitle">عن لمسة حراير</h4>
+                                <div class="widget-content">
+                                    <div class="widgetized-menu">
+                                        <ul class="list-unstyled">
+                                            <li><a href="#"><b>عن لمسة حراير</b></a></li>
+                                            <li><a href="#">فروعنا</a></li>
+                                            <li><a href="#">الأحكام والشروط</a></li>
+                                            <li><a href="#">سياسة الشحن و التوصيل​</a></li>
+                                            <li><a href="#">سياسة الخصوصية</a></li>
+                                        </ul>
+                                    </div>
+                                </div> <!-- end of widget-content -->
+                            </aside> <!-- end of widget-container -->
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-6 order-md-2 col-lg-4 order-lg-4">
+                            <aside class="widget-container">
+                                <h4 class="widgettitle">سجل للحصول على اخر اخبارنا</h4>
+                                <div class="widget-content">
+                                    <div class="newsletter-widget">
+                                        <p>يمكنك إلغاء الاشتراك في أي لحظة. لهذا الغرض ، يرجى العثور على معلومات الاتصال الخاصة بنا في الإشعار القانوني.</p>
+                                        <form class="mc-subscribe-form">
+                                            <div class="input-group">
+                                                <input type="email" autocomplete="off" placeholder="Your Email Address" required>
+                                                <button class="default-btn" type="submit">اشتراك</button>
+                                            </div>
+                                        </form> <!-- end of form -->
+
+                                        <div class="mailchimp-alerts">
+                                            <div class="mailchimp-submitting"></div>
+                                            <div class="mailchimp-success"></div>
+                                            <div class="mailchimp-error"></div>
+                                        </div><!-- end of mailchimp-alerts -->
+                                    </div>
+                                </div> <!-- end of widget-content -->
+                            </aside> <!-- end of widget-container -->
+
+                            <aside class="widget-container">
+                                <div class="widget-content">
+                                    <div class="social-widget mt-half">
+                                        <div class="socials d-flex align-items-center justify-content-center justify-content-md-start">
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item"><a href="https://www.facebook.com/Harayerkw" class="bg-facebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                                <li class="list-inline-item"><a href="https://twitter.com/Harayer7" class="bg-twitter" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                                <li class="list-inline-item"><a href="https://www.youtube.com/@harayerkw" class="bg-gplus" title="Youtube" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                                                <li class="list-inline-item"><a href="https://www.instagram.com/harayerkw/" class="bg-instagram" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                                                <li class="list-inline-item"><a href="https://www.linkedin.com/in/harayer-kw-535201252/" class="bg-linkedin" title="Linked In" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div> <!-- end of widget-content -->
+                            </aside> <!-- end of widget-container -->
+                        </div>
+                    </div> <!-- end of row -->
+                </div> <!-- end of footer-inner -->
+            </div> <!-- end of container -->
+        </div> <!-- end of footer-widgets-area -->
+
+        <!-- Footer Copyright -->
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                        <p class="copyright-text">Copyright © 2023 . All Right Reserved.  <a href="#" rel="nofollow">BY GANI MARWEN</a></p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="footer-payment">
+                            <a href="#"><img src="../../assets/images/icons/payment.png" alt="Payment Icons"></a>
+                        </div>
+                    </div>
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of footer-copyright -->
+    </footer>
+    <!-- End of Footer -->
+
+    <!-- Quick View Content Start -->
+    <div class="product-quick-view">
+        <div class="container">
+            <!-- Start of Modal -->
+            <div class="modal fade" id="product_quick_view">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+                        </div> <!-- end of modal-header -->
+
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-7">
+                                    <div class="product-gallery">
+                                        <div class="gallery-with-thumbs" data-nav-center="false">
+                                            <div class="product-image-container">
+                                                <div class="product-full-image main-slider image-popup">
+
+                                                    <!-- Slides -->
+                                                    <div class="swiper-wrapper">
+                                                        <figure class="swiper-slide">
+                                                            <a href="../../assets/images/products/single/product-1.jpg" data-size="600x600">
+                                                                <img src="../../assets/images/products/single/product-1.jpg" alt="Product Image">
+                                                                <div class="image-overlay"><i class="fa fa-search-plus"></i></div>
+                                                            </a>
+                                                            <figcaption class="visually-hidden">
+                                                                <span>Product Image</span>
+                                                            </figcaption>
+                                                        </figure>
+                                                        <figure class="swiper-slide">
+                                                            <a href="../../assets/images/products/single/product-2.jpg" data-size="600x600">
+                                                                <img src="../../assets/images/products/single/product-2.jpg" alt="Product Image">
+                                                                <div class="image-overlay"><i class="fa fa-search-plus"></i></div>
+                                                            </a>
+                                                            <figcaption class="visually-hidden">
+                                                                <span>Product Image</span>
+                                                            </figcaption>
+                                                        </figure>
+                                                        <figure class="swiper-slide">
+                                                            <a href="../../assets/images/products/single/product-3.jpg" data-size="600x600">
+                                                                <img src="../../assets/images/products/single/product-3.jpg" alt="Product Image">
+                                                                <div class="image-overlay"><i class="fa fa-search-plus"></i></div>
+                                                            </a>
+                                                            <figcaption class="visually-hidden">
+                                                                <span>Product Image</span>
+                                                            </figcaption>
+                                                        </figure>
+                                                        <figure class="swiper-slide">
+                                                            <a href="../../assets/images/products/single/product-4.jpg" data-size="600x600">
+                                                                <img src="../../assets/images/products/single/product-4.jpg" alt="Product Image">
+                                                                <div class="image-overlay"><i class="fa fa-search-plus"></i></div>
+                                                            </a>
+                                                            <figcaption class="visually-hidden">
+                                                                <span>Product Image</span>
+                                                            </figcaption>
+                                                        </figure>
+                                                        <figure class="swiper-slide">
+                                                            <a href="../../assets/images/products/single/product-5.jpg" data-size="600x600">
+                                                                <img src="../../assets/images/products/single/product-5.jpg" alt="Product Image">
+                                                                <div class="image-overlay"><i class="fa fa-search-plus"></i></div>
+                                                            </a>
+                                                            <figcaption class="visually-hidden">
+                                                                <span>Product Image</span>
+                                                            </figcaption>
+                                                        </figure>
+                                                        <figure class="swiper-slide">
+                                                            <a href="../../assets/images/products/single/product-6.jpg" data-size="600x600">
+                                                                <img src="../../assets/images/products/single/product-6.jpg" alt="Product Image">
+                                                                <div class="image-overlay"><i class="fa fa-search-plus"></i></div>
+                                                            </a>
+                                                            <figcaption class="visually-hidden">
+                                                                <span>Product Image</span>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </div>
+                                                </div> <!-- end of product-full-image -->
+                                            </div>
+
+                                            <div class="product-thumb-container">
+                                                <div class="product-thumb-image pos-r">
+                                                    <div class="nav-slider">
+                                                        <!-- Slides -->
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <img src="../../assets/images/products/single/product-thumb-1.jpg" alt="Product Thumbnail Image">
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <img src="../../assets/images/products/single/product-thumb-2.jpg" alt="Product Thumbnail Image">
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <img src="../../assets/images/products/single/product-thumb-3.jpg" alt="Product Thumbnail Image">
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <img src="../../assets/images/products/single/product-thumb-4.jpg" alt="Product Thumbnail Image">
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <img src="../../assets/images/products/single/product-thumb-5.jpg" alt="Product Thumbnail Image">
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <img src="../../assets/images/products/single/product-thumb-6.jpg" alt="Product Thumbnail Image">
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Navigation -->
+                                                        <div class="swiper-arrow next"><i class="fa fa-angle-down"></i></div>
+                                                        <div class="swiper-arrow prev"><i class="fa fa-angle-up"></i></div>
+                                                    </div>
+                                                </div> <!-- end of product-thumb-image -->
+                                            </div>
+                                        </div> <!-- end of gallery-with-thumbs -->
+                                    </div> <!-- end of product-gallery -->
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-5">
+                                    <div class="product-details">
+                                        <h3 class="product-name">Cas Meque Metus</h3>
+                                        <div class="product-ratings">
+                                            <ul class="rating d-flex">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-price">
+                                            <p class="d-flex align-items-center">
+                                                <span class="price-old">$54.65</span>
+                                                <span class="price-new">$43.72</span>
+                                                <span class="price-discount">-20%</span>
+                                            </p>
+                                        </div>
+                                        <div class="product-description">
+                                            <p>Regular fit, round neckline, short sleeves. Made of extra long staple pima cotton.</p>
+                                        </div>
+                                        <form action="#" class="product-actions">
+                                            <h3>Available Options</h3>
+                                            <div class="product-size-color d-flex">
+                                                <div class="product-size">
+                                                    <label>Size</label>
+                                                    <select class="nice-select">
+                                                        <option>S</option>
+                                                        <option>M</option>
+                                                        <option>L</option>
+                                                    </select>
+                                                </div>
+                                                <div class="product-color">
+                                                    <label>color</label>
+                                                    <ul class="color-list">
+                                                        <li>
+                                                            <a class="white" href="#"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="orange active" href="#"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="paste" href="#"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-stock">
+                                                <label>Quantity</label>
+                                                <ul class="d-flex flex-wrap align-items-center">
+                                                    <li class="box-quantity">
+                                                        <div class="cart-input">
+                                                            <input class="cart-input-box" type="text" value="0">
+                                                            <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                                            <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" class="default-btn">Add to Cart</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="wishlist-compare">
+                                                <button class="btn-wishlist" type="button" title="Add to Wishlist">Add to Wishlist</button>
+                                                <button class="btn-compare" type="button" title="Add to Compare">Add to Compare</button>
+                                            </div>
+                                        </form>
+                                    </div> <!-- end of product-details -->
+                                </div>
+                            </div> <!-- end of row -->
+                        </div> <!-- end of modal-body -->
+
+                        <div class="modal-footer justify-content-start">
+                            <div class="social-sharing d-flex align-items-center">
+                                <span>Share</span>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#" class="bg-facebook" data-bs-toggle="tooltip" data-position="top" data-original-title="Facebook" target="_blank"><i class="fa fa-facebook"></i><span>Share</span></a></li>
+                                    <li class="list-inline-item"><a href="#" class="bg-twitter" data-bs-toggle="tooltip" data-position="top" data-original-title="Twitter" target="_blank"><i class="fa fa-twitter"></i><span>Tweet</span></a></li>
+                                    <li class="list-inline-item"><a href="#" class="bg-gplus" data-bs-toggle="tooltip" data-position="top" data-original-title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i><span>Google+</span></a></li>
+                                    <li class="list-inline-item"><a href="#" class="bg-pinterest" data-bs-toggle="tooltip" data-position="top" data-original-title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i><span>Pinterest</span></a></li>
+                                </ul>
+                            </div>
+                        </div> <!-- end of modal-footer -->
+                    </div> <!-- end of modal-content -->
+                </div> <!-- end of modal-dialog -->
+            </div> <!-- end of modal -->
+        </div> <!-- end of container -->
+    </div>
+    <!-- Quick View Content End -->
+
+    <!-- Start of Scroll to Top -->
+    <div id="to_top">
+        <i class="ion ion-ios-arrow-forward"></i>
+        <i class="ion ion-ios-arrow-forward"></i>
+    </div>
+    <!-- End of Scroll to Top -->
+    </div>
+    <!-- End of Whole Site Wrapper -->
+
+    <!-- Initializing Photoswipe -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Photoswipe -->
+
+        {% block javascripts %}
+            <script src="{{ asset('assets/js/jquery.1.12.4.min.js') }}"></script>
+
+            <!-- Popper JS -->
+            <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+
+            <!-- Bootstrap JS -->
+            <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+
+            <!-- Plugins JS -->
+            <script src="{{ asset('assets/js/plugins.js') }}"></script>
+
+            <!-- Main JS -->
+            <script src="{{ asset('assets/js/main.js') }}"></script>
+        {% endblock %}
     </body>
 </html>

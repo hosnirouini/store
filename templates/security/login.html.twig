@@ -1,0 +1,222 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <!--[if lt IE 9]>
+
+
+        <div class="fixed-header-space"></div> empty placeholder div for Fixed Menu bar height-->
+
+        <!-- Start of Breadcrumbs -->
+
+
+
+    <form method="post">
+
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="mb-3">
+                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+        {% endif %}
+
+
+
+{#    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>#}
+{#    <label for="inputEmail">Email</label>#}
+{#    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>#}
+{#    <label for="inputPassword">Password</label>#}
+{#    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>#}
+
+
+{#    <div class="checkbox mb-3">#}
+{#        <label>#}
+{#            <input type="checkbox" name="_remember_me"> Remember me#}
+{#        </label>#}
+{#    </div>#}
+
+{#        <input type="hidden" name="_csrf_token"#}
+{#               value="{{ csrf_token('authenticate') }}">#}
+
+{#        <button class="btn btn-lg btn-primary" type="submit">#}
+{#        Sign in#}
+{#    </button>#}
+
+{#    </form>#}
+
+
+
+
+
+
+
+    {#        #}{# <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>#}
+{#    <label for="inputEmail">Email</label>#}
+{#    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>#}
+{#    <label for="inputPassword">Password</label>#}
+{#    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required> #}
+{#        <div class="container d-flex flex-column align-items-center justify-content-center mt-3">#}
+{#            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center mt-3">#}
+
+{#                <div class="d-flex justify-content-center py-4 mt-3">#}
+{#                    <a href="{{path('app_main')}}" class="logo d-flex align-items-center w-auto">#}
+{#                        <img src="assets/img/logo.png" alt="">#}
+{#                        <span class="d-none d-lg-block">NiceAdmin</span>#}
+{#                    </a>#}
+{#                </div><!-- End Logo -->#}
+
+{#                <div class="card mb-3">#}
+
+{#                    <div class="card-body">#}
+
+{#                        <div class="pt-4 pb-2">#}
+{#                            <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>#}
+{#                            <p class="text-center small">Enter your username &amp; password to login</p>#}
+{#                        </div>#}
+
+{#                        <form class="row g-3 needs-validation" novalidate="">#}
+
+{#                            <div class="col-12">#}
+{#                                <label for="inputEmail" class="form-label">email</label>#}
+{#                                <div class="input-group has-validation">#}
+{#                                    <span class="input-group-text" id="inputGroupPrepend">@</span>#}
+{#                                    <input type="text" name="email" class="form-control" id="inputEmail" required="" value="{{ last_username }}" autocomplete="email">#}
+{#                                    <div class="invalid-feedback">Please enter your email.</div>#}
+{#                                </div>#}
+{#                            </div>#}
+
+{#                            <div class="col-12">#}
+{#                                <label for="inputPassword" class="form-label">Password</label>#}
+{#                                <input type="password" name="password" class="form-control" id="yourPassword" required="">#}
+{#                                <div class="invalid-feedback">Please enter your password!</div>#}
+{#                            </div>#}
+
+{#                            <div class="col-12">#}
+{#                                <div class="form-check">#}
+{#                                    <input class="form-check-input" type="checkbox" name="_remember_me" value="true" id="rememberMe">#}
+{#                                    <label class="form-check-label" for="rememberMe">Remember me</label>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <button class="btn btn-primary w-100" type="submit">Login</button>#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <p class="small mb-0">Don't have account? <a href="{{path('app_register')}}">Create an account</a></p>#}
+{#                            </div>#}
+{#                        </form>#}
+
+{#                    </div>#}
+{#                </div>#}
+
+{#                <input type="hidden" name="_csrf_token"#}
+{#                       value="{{ csrf_token('authenticate') }}">#}
+
+{#            </div>#}
+
+{#        </div>#}
+
+        {#
+        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+        See https://symfony.com/doc/current/security/remember_me.html
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+        </div>
+        #}
+
+        {# <button class="btn btn-lg btn-primary" type="submit">
+        Sign in
+    </button> #}
+{#    </form>#}
+
+
+
+
+
+
+
+
+        <div class="breadcrumb-section bgc-offset mb-full">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12">
+                        <nav class="breadcrumb">
+                            <a class="breadcrumb-item" href="../main/index.html.twig">الصفحة الرئيسية</a>
+                            <span class="breadcrumb-item active">تسجيل الدخول</span>
+                        </nav>
+                    </div>
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div>
+        <!-- End of Breadcrumbs -->
+
+        <!-- Start of Main Content Wrapper -->
+
+        <div id="content" class="main-content-wrapper">
+
+            <!-- Start of Login Wrapper -->
+
+            <div class="login-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <main id="primary" class="site-main">
+                                <div class="user-login">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-12">
+                                            <div class="section-title">
+                                                <h2><b>تسجيل الدخول إلى حسابك</b></h2>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end of row -->
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-6 offset-lg-2 offset-xl-3">
+                                            <div class="login-form">
+
+                                                    <div class="form-group row align-items-center mb-4">
+                                                        <label for="inputEmail" name = "email" class="col-12 col-sm-12 col-md-4 col-form-label " > البريد الإلكتروني</label>
+                                                        <div class="col-12 col-sm-12 col-md-8">
+                                                            <input type="email" class="form-control" id="email" placeholder="Email" required name="email">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row align-items-center mb-4">
+                                                        <label for="inputPassword" name ="password" class="col-12 col-sm-12 col-md-4 col-form-label " >كلمة المرور</label>
+                                                        <div class="col-12 col-sm-12 col-md-8">
+                                                            <input type="password" class="form-control" id="c-password" placeholder="Password" required name="password">
+                                                            <button class="pass-show-btn" type="button">عرض</button>
+                                                        </div>
+                                                    </div>
+                                                    <input type="hidden" name="_csrf_token"
+                                                           value="{{ csrf_token('authenticate') }}">
+                                                    <div class="login-box mt-5 text-center">
+                                                        <p><a href="#">نسيت كلمة السر؟</a></p>
+                                                        <button type="submit" class="default-btn tiny-btn mt-4">تسجيل الدخول</button>
+                                                    </div>
+                                                    <div class="text-center mt-half pt-half top-bordered">
+                                                        <p>لا حساب؟ <a href="{{ path('app_register') }}">قم بإنشاء واحدة هنا</a>.</p>
+                                                    </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end of user-login -->
+                            </main> <!-- end of #primary -->
+                        </div>
+                    </div> <!-- end of row -->
+                </div> <!-- end of container -->
+            </div>
+        </div>
+            </form>
+
+            <!-- End of Login Wrapper -->
+        </div>
+        <!-- End of Main Content Wrapper -->
+
+       <!-- Start of Footer -->
+
+{% endblock %}
