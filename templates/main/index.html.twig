@@ -89,7 +89,7 @@
                 </div>
             </section>
             <!-- End of Primary Slider Section -->
-            
+
             <!-- Start of Support Section -->
             <section class="support-section mb0">
                 <div class="container">
@@ -130,33 +130,31 @@
             <div class="banner-section mb-half">
                 <div class="container">
                     <div class="row">
-                        {% for category in products %}
-                            {% for product in category.products %}
+
                         <div class="col-6 col-sm-6 col-md-4 col-lg-4">
                             <div class="promo-banner hover-effect-1">
                                 <a href="#">
-                                    <img src="{{ asset('images/products/')~product.image1 }}" alt="Promo Banner" style="width: 370px;height: 370px;">
+                                    <img src="{{ asset('assets/images/slider/home-1/2.jpg') }}" alt="Promo Banner">
                                 </a>
-                                <h1>qsd;lm</h1>
+                                <h1></h1>
                             </div> <!-- end of promo-banner -->
 
                         </div>
-                                {% endfor %}
-                        {% endfor %}
-{#                        <div class="col-6 col-sm-6 col-md-4 col-lg-4">#}
-{#                            <div class="promo-banner hover-effect-1">#}
-{#                                <a href="#">#}
-{#                                    <img src="{{ asset('images/products')~products2.image }}" alt="Promo Banner">#}
-{#                                </a>#}
-{#                            </div> <!-- end of promo-banner -->#}
-{#                        </div>#}
-                        {#<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-4">
                             <div class="promo-banner hover-effect-1">
                                 <a href="#">
-                                    <img src="../../assets/images/banners/banner-3.jpg" alt="Promo Banner">
+                                    <img src="{{ asset('assets/images/slider/home-1/1.jpg') }}" alt="Promo Banner">
                                 </a>
                             </div> <!-- end of promo-banner -->
-                        </div>#}
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                            <div class="promo-banner hover-effect-1">
+                                <a href="#">
+                                    <img src="{{ asset('assets/images/slider/home-1/3.jpg') }}" alt="Promo Banner">
+                                </a>
+                            </div> <!-- end of promo-banner -->
+                        </div>
                     </div> <!-- end of row -->
                 </div> <!-- end of container -->
             </div>
@@ -181,49 +179,7 @@
 
                                     <!-- Slides -->
                                     <div class="swiper-wrapper">
-{#                                        <article class="swiper-slide product-layout">#}
-{#                                            <div class="product-thumb">#}
-{#                                                <div class="product-inner">#}
-{#                                                    <div class="product-image">#}
-{#                                                    	<div class="label-product label-sale">-20%</div>#}
-{#                                                        <div class="label-product label-new">New</div>#}
-{#                                                        <a href="../hrayerkw/single-product.html.twig">#}
-{#                                                            <img src="../../assets/images/products/new/product-1.jpg" alt="Compete Track Tote" title="Compete Track Tote">#}
-{#                                                        </a>#}
-{#                                                        <div class="action-links">#}
-{#                                                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="pe-7s-shopbag"></i></a>#}
-{#                                                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="pe-7s-like"></i></a>#}
-{#                                                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="pe-7s-refresh-2"></i></a>#}
-{#                                                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="pe-7s-search"></i></a>#}
-{#                                                        </div>#}
-{#                                                    </div> <!-- end of product-image -->#}
 
-{#                                                    <div class="product-caption">#}
-{#                                                    	<div class="product-meta d-flex justify-content-between align-items-center">#}
-{#	                                                    	<div class="product-manufacturer">#}
-{#	                                                    		<a href="#">Studio Design</a>#}
-{#	                                                    	</div>#}
-{#	                                                        <div class="product-ratings">#}
-{#	                                                            <div class="rating-box">#}
-{#	                                                                <ul class="rating d-flex">#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline disabled"></i></li>#}
-{#	                                                                </ul>#}
-{#	                                                            </div>#}
-{#	                                                        </div>#}
-{#	                                                    </div>#}
-{#                                                        <h4 class="product-name"><a href="../hrayerkw/single-product.html.twig">Compete Track Tote</a></h4>#}
-{#                                                        <p class="product-price">#}
-{#                                                            <span class="price-old">$54.65</span>#}
-{#                                                            <span class="price-new">$43.72</span>#}
-{#                                                        </p>#}
-{#                                                    </div><!-- end of product-caption -->#}
-{#                                                </div><!-- end of product-inner -->#}
-{#                                            </div><!-- end of product-thumb -->#}
-{#                                        </article> <!-- end of product-layout -->#}
                                             {% for product in topsellers %}
                                                 {% for topselle in product.products %}
                                         <article class="swiper-slide product-layout">
@@ -232,7 +188,7 @@
                                                     <div class="product-image">
                                                         <div class="label-product label-new">New</div>
                                                         <a href="{{ path('show_product',{'id':topselle.id}) }}">
-                                                            <img src="{{ asset('images/products/')~topselle.image1 }}" alt="Fusion Backpack" title="Fusion Backpack" style="width: 600px;height: 200px">
+                                                            <img src="{{ asset('images/products/')~topselle.image1 }}" alt="Fusion Backpack" title="Fusion Backpack" style="width: 600px;height: 250px">
                                                         </a>
                                                         <div class="action-links">
                                                             <a class="action-btn btn-cart" href="{{ path('add_cart',{'id':topselle.id}) }}" title="Add to Cart"><i class="pe-7s-shopbag"></i></a>
@@ -261,7 +217,12 @@
 	                                                    </div>
                                                         <h4 class="product-name"><a href="single-product.html.twig">{{ topselle.description }}</a></h4>
                                                         <p class="product-price">
-                                                            <span class="price-new">{{ topselle.price }}</span>
+                                                            {% if topselle.oldprice ==0 %}
+                                                            <span class="price-old">KD{{ topselle.price / 100}}</span>
+                                                             {% else%}
+                                                                 <span class="price-old">KD{{ topselle.oldprice / 100}}</span>
+                                                            {% endif %}
+                                                            <span class="price-new">KD{{ topselle.price / 100}}</span>
                                                         </p>
                                                     </div><!-- end of product-caption -->
                                                 </div><!-- end of product-inner -->
@@ -269,259 +230,7 @@
                                         </article> <!-- end of product-layout -->
                                                     {% endfor %}
                                         {% endfor %}
-{#                                        <article class="swiper-slide product-layout">#}
-{#                                            <div class="product-thumb">#}
-{#                                                <div class="product-inner">#}
-{#                                                    <div class="product-image">#}
-{#                                                        <div class="label-product label-new">New</div>#}
-{#                                                        <a href="../hrayerkw/single-product.html.twig">#}
-{#                                                            <img src="../../assets/images/products/new/product-3.jpg" alt="Rival Field Messenger 6" title="Rival Field Messenger 6">#}
-{#                                                        </a>#}
-{#                                                        <div class="action-links">#}
-{#                                                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="pe-7s-shopbag"></i></a>#}
-{#                                                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="pe-7s-like"></i></a>#}
-{#                                                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="pe-7s-refresh-2"></i></a>#}
-{#                                                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="pe-7s-search"></i></a>#}
-{#                                                        </div>#}
-{#                                                    </div> <!-- end of product-image -->#}
 
-{#                                                    <div class="product-caption">#}
-{#                                                    	<div class="product-meta d-flex justify-content-between align-items-center">#}
-{#	                                                    	<div class="product-manufacturer">#}
-{#	                                                    		<a href="#">Graphic Corner</a>#}
-{#	                                                    	</div>#}
-{#	                                                        <div class="product-ratings">#}
-{#	                                                            <div class="rating-box">#}
-{#	                                                                <ul class="rating d-flex">#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                </ul>#}
-{#	                                                            </div>#}
-{#	                                                        </div>#}
-{#	                                                    </div>#}
-{#                                                        <h4 class="product-name"><a href="../hrayerkw/single-product.html.twig">Rival Field Messenger 6</a></h4>#}
-{#                                                        <p class="product-price">#}
-{#                                                            <span class="price-new">$54.40</span>#}
-{#                                                        </p>#}
-{#                                                    </div><!-- end of product-caption -->#}
-{#                                                </div><!-- end of product-inner -->#}
-{#                                            </div><!-- end of product-thumb -->#}
-{#                                        </article> <!-- end of product-layout -->#}
-
-{#                                        <article class="swiper-slide product-layout">#}
-{#                                            <div class="product-thumb">#}
-{#                                                <div class="product-inner">#}
-{#                                                    <div class="product-image">#}
-{#                                                        <div class="label-product label-new">New</div>#}
-{#                                                        <a href="../hrayerkw/single-product.html.twig">#}
-{#                                                            <img src="../../assets/images/products/new/product-4.jpg" alt="Rival Field Messenger" title="Rival Field Messenger">#}
-{#                                                        </a>#}
-{#                                                        <div class="action-links">#}
-{#                                                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="pe-7s-shopbag"></i></a>#}
-{#                                                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="pe-7s-like"></i></a>#}
-{#                                                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="pe-7s-refresh-2"></i></a>#}
-{#                                                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="pe-7s-search"></i></a>#}
-{#                                                        </div>#}
-{#                                                    </div> <!-- end of product-image -->#}
-
-{#                                                    <div class="product-caption">#}
-{#                                                    	<div class="product-meta d-flex justify-content-between align-items-center">#}
-{#	                                                    	<div class="product-manufacturer">#}
-{#	                                                    		<a href="#">Graphic Corner</a>#}
-{#	                                                    	</div>#}
-{#	                                                        <div class="product-ratings">#}
-{#	                                                            <div class="rating-box">#}
-{#	                                                                <ul class="rating d-flex">#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline disabled"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline disabled"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline disabled"></i></li>#}
-{#	                                                                </ul>#}
-{#	                                                            </div>#}
-{#	                                                        </div>#}
-{#	                                                    </div>#}
-{#                                                        <h4 class="product-name"><a href="../hrayerkw/single-product.html.twig">Rival Field Messenger</a></h4>#}
-{#                                                        <p class="product-price">#}
-{#                                                            <span class="price-new">$67.50</span>#}
-{#                                                        </p>#}
-{#                                                    </div><!-- end of product-caption -->#}
-{#                                                </div><!-- end of product-inner -->#}
-{#                                            </div><!-- end of product-thumb -->#}
-{#                                        </article> <!-- end of product-layout -->#}
-
-{#                                        <article class="swiper-slide product-layout">#}
-{#                                            <div class="product-thumb">#}
-{#                                                <div class="product-inner">#}
-{#                                                    <div class="product-image">#}
-{#                                                        <div class="label-product label-new">New</div>#}
-{#                                                        <a href="../hrayerkw/single-product.html.twig">#}
-{#                                                            <img src="../../assets/images/products/new/product-5.jpg" alt="Crown Summit Backpack" title="Crown Summit Backpack">#}
-{#                                                        </a>#}
-{#                                                        <div class="action-links">#}
-{#                                                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="pe-7s-shopbag"></i></a>#}
-{#                                                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="pe-7s-like"></i></a>#}
-{#                                                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="pe-7s-refresh-2"></i></a>#}
-{#                                                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="pe-7s-search"></i></a>#}
-{#                                                        </div>#}
-{#                                                    </div> <!-- end of product-image -->#}
-
-{#                                                    <div class="product-caption">#}
-{#                                                    	<div class="product-meta d-flex justify-content-between align-items-center">#}
-{#	                                                    	<div class="product-manufacturer">#}
-{#	                                                    		<a href="#">Graphic Corner</a>#}
-{#	                                                    	</div>#}
-{#	                                                        <div class="product-ratings">#}
-{#	                                                            <div class="rating-box">#}
-{#	                                                                <ul class="rating d-flex">#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline disabled"></i></li>#}
-{#	                                                                </ul>#}
-{#	                                                            </div>#}
-{#	                                                        </div>#}
-{#	                                                    </div>#}
-{#                                                        <h4 class="product-name"><a href="../hrayerkw/single-product.html.twig">Crown Summit Backpack</a></h4>#}
-{#                                                        <p class="product-price">#}
-{#                                                            <span class="price-new">$78.90</span>#}
-{#                                                        </p>#}
-{#                                                    </div><!-- end of product-caption -->#}
-{#                                                </div><!-- end of product-inner -->#}
-{#                                            </div><!-- end of product-thumb -->#}
-{#                                        </article> <!-- end of product-layout -->#}
-
-{#                                        <article class="swiper-slide product-layout">#}
-{#                                            <div class="product-thumb">#}
-{#                                                <div class="product-inner">#}
-{#                                                    <div class="product-image">#}
-{#                                                        <div class="label-product label-new">New</div>#}
-{#                                                        <a href="../hrayerkw/single-product.html.twig">#}
-{#                                                            <img src="../../assets/images/products/new/product-6.jpg" alt="Rival Field Messenger" title="Rival Field Messenger">#}
-{#                                                        </a>#}
-{#                                                        <div class="action-links">#}
-{#                                                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="pe-7s-shopbag"></i></a>#}
-{#                                                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="pe-7s-like"></i></a>#}
-{#                                                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="pe-7s-refresh-2"></i></a>#}
-{#                                                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="pe-7s-search"></i></a>#}
-{#                                                        </div>#}
-{#                                                    </div> <!-- end of product-image -->#}
-
-{#                                                    <div class="product-caption">#}
-{#                                                    	<div class="product-meta d-flex justify-content-between align-items-center">#}
-{#	                                                    	<div class="product-manufacturer">#}
-{#	                                                    		<a href="#">Graphic Corner</a>#}
-{#	                                                    	</div>#}
-{#	                                                        <div class="product-ratings">#}
-{#	                                                            <div class="rating-box">#}
-{#	                                                                <ul class="rating d-flex">#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline disabled"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline disabled"></i></li>#}
-{#	                                                                </ul>#}
-{#	                                                            </div>#}
-{#	                                                        </div>#}
-{#	                                                    </div>#}
-{#                                                        <h4 class="product-name"><a href="../hrayerkw/single-product.html.twig">Rival Field Messenger</a></h4>#}
-{#                                                        <p class="product-price">#}
-{#                                                            <span class="price-new">$54.50</span>#}
-{#                                                        </p>#}
-{#                                                    </div><!-- end of product-caption -->#}
-{#                                                </div><!-- end of product-inner -->#}
-{#                                            </div><!-- end of product-thumb -->#}
-{#                                        </article> <!-- end of product-layout -->#}
-
-{#                                        <article class="swiper-slide product-layout">#}
-{#                                            <div class="product-thumb">#}
-{#                                                <div class="product-inner">#}
-{#                                                    <div class="product-image">#}
-{#                                                    	<div class="label-product label-sale">-7%</div>#}
-{#                                                        <div class="label-product label-new">New</div>#}
-{#                                                        <a href="../hrayerkw/single-product.html.twig">#}
-{#                                                            <img src="../../assets/images/products/new/product-7.jpg" alt="Strive Shoulder Pack" title="Strive Shoulder Pack">#}
-{#                                                        </a>#}
-{#                                                        <div class="action-links">#}
-{#                                                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="pe-7s-shopbag"></i></a>#}
-{#                                                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="pe-7s-like"></i></a>#}
-{#                                                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="pe-7s-refresh-2"></i></a>#}
-{#                                                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="pe-7s-search"></i></a>#}
-{#                                                        </div>#}
-{#                                                    </div> <!-- end of product-image -->#}
-
-{#                                                    <div class="product-caption">#}
-{#                                                    	<div class="product-meta d-flex justify-content-between align-items-center">#}
-{#	                                                    	<div class="product-manufacturer">#}
-{#	                                                    		<a href="#">Graphic Corner</a>#}
-{#	                                                    	</div>#}
-{#	                                                        <div class="product-ratings">#}
-{#	                                                            <div class="rating-box">#}
-{#	                                                                <ul class="rating d-flex">#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                </ul>#}
-{#	                                                            </div>#}
-{#	                                                        </div>#}
-{#	                                                    </div>#}
-{#                                                        <h4 class="product-name"><a href="../hrayerkw/single-product.html.twig">Strive Shoulder Pack</a></h4>#}
-{#                                                        <p class="product-price">#}
-{#                                                            <span class="price-old">$76.40</span>#}
-{#                                                            <span class="price-new">$71.05</span>#}
-{#                                                        </p>#}
-{#                                                    </div><!-- end of product-caption -->#}
-{#                                                </div><!-- end of product-inner -->#}
-{#                                            </div><!-- end of product-thumb -->#}
-{#                                        </article> <!-- end of product-layout -->#}
-
-{#                                        <article class="swiper-slide product-layout">#}
-{#                                            <div class="product-thumb">#}
-{#                                                <div class="product-inner">#}
-{#                                                    <div class="product-image">#}
-{#                                                        <div class="label-product label-new">New</div>#}
-{#                                                        <a href="../hrayerkw/single-product.html.twig">#}
-{#                                                            <img src="../../assets/images/products/new/product-8.jpg" alt="Wayfarer Messenger Bag" title="Wayfarer Messenger Bag">#}
-{#                                                        </a>#}
-{#                                                        <div class="action-links">#}
-{#                                                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="pe-7s-shopbag"></i></a>#}
-{#                                                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="pe-7s-like"></i></a>#}
-{#                                                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="pe-7s-refresh-2"></i></a>#}
-{#                                                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="pe-7s-search"></i></a>#}
-{#                                                        </div>#}
-{#                                                    </div> <!-- end of product-image -->#}
-
-{#                                                    <div class="product-caption">#}
-{#                                                    	<div class="product-meta d-flex justify-content-between align-items-center">#}
-{#	                                                    	<div class="product-manufacturer">#}
-{#	                                                    		<a href="#">Studio Design</a>#}
-{#	                                                    	</div>#}
-{#	                                                        <div class="product-ratings">#}
-{#	                                                            <div class="rating-box">#}
-{#	                                                                <ul class="rating d-flex">#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                    <li><i class="ion ion-md-star-outline"></i></li>#}
-{#	                                                                </ul>#}
-{#	                                                            </div>#}
-{#	                                                        </div>#}
-{#	                                                    </div>#}
-{#                                                        <h4 class="product-name"><a href="../hrayerkw/single-product.html.twig">Wayfarer Messenger Bag</a></h4>#}
-{#                                                        <p class="product-price">#}
-{#                                                            <span class="price-new">$65.40</span>#}
-{#                                                        </p>#}
-{#                                                    </div><!-- end of product-caption -->#}
-{#                                                </div><!-- end of product-inner -->#}
-{#                                            </div><!-- end of product-thumb -->#}
-{#                                        </article> <!-- end of product-layout -->#}
                                     </div> <!-- end of swiper-wrapper -->
 
                                     <!-- Slider Navigation -->
@@ -536,26 +245,35 @@
             <!-- End of New Arrivals Section -->
 
             <!-- Start of Promo Banner Section -->
-            <section class="promo-banner-section bg-img-wrapper">
-            	<div class="image-placeholder pos-r">
-	                <div class="container">
-	                    <div class="row">
-	                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-	                            <div class="banner-with-text">
-	                                <img src="../../assets/images/backgrounds/bg-banner.jpg" class="visually-hidden" alt="Promo Banner">
-									<div class="promo-text" >
-										<h1 style="color:red">Hurry Up!</h1>
-										<h2 style="color:#ffffff"> Daily Deal Of The Day</h2>
-										<p style="color:#ffffff">Abdul, a young, widowed Muslim man, needed to leave Syria and not be delayed by the authorities in getting to Europe. The best way to do this, he reasoned, was to acquire another family as cover, and he found one. It was all a sham, however, just a means to an end.</p>
-										<a href="#" class="default-btn large">اكتشف الآن</a>
-									</div>
-	                            </div> <!-- end of promo-banner -->
-	                        </div>
-	                    </div> <!-- end of row -->
-	                </div> <!-- end of container -->
-	            </div> <!-- end of image-placeholder -->
-            </section>
+
+
+
+            <section class="primary-slider-section mb0 pos-r">
+                <div id="primary_slider" class="swiper-container slider-type-1">
+
+                    <!-- Slides -->
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide bg-img-wrapper">
+
+                                <video controls="" autoplay="" muted="" loop="">
+                                    <source src="{{ asset('assets/video/cover.mp4') }}" type="video/mp4">
+
+                                </video>
+                           <!-- end of slider-inner -->
+                        </div> <!-- end of swiper-slide -->
+
+                    </div> <!-- end of swiper-slide -->
+
+                    <!-- Slider Navigation -->
+                    <div class="swiper-arrow next slide"><i class="fa fa-angle-right"></i></div>
+                    <div class="swiper-arrow prev slide"><i class="fa fa-angle-left"></i></div>
+
+                    <!-- Slider Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section><br><br>
             <!-- End of Promo Banner Section -->
+
 
             <!-- Start of Categories Section -->
             <section class="categories-section">
@@ -563,34 +281,15 @@
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-12">
                             <div class="section-title">
-                                <h2><font size="6"><b>الأقسام</b></font><b></h2>
+                                <h2><font size="6"><b>الأقسام</b></font></h2>
                                 
                             </div>
 						</div>
 					</div> <!-- end of row -->
-
-                    <div class="row product-row">
-                        <div class="col-12 col-sm-12 col-md-12">
-
-                            <!-- Nav Pills -->
-                            <ul class="nav nav-pills justify-content-center" id="our_categories" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="nav_shop_new" data-bs-toggle="pill" href="#shop_new" role="tab" aria-controls="shop_new" aria-selected="true"><font size="4"><b>عبايات</b></font></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="nav_shop_shoes" data-bs-toggle="pill" href="#shop_shoes" role="tab" aria-controls="shop_shoes" aria-selected="false"><font size="4"><b>فساتين</b></font></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="nav_shop_bags" data-bs-toggle="pill" href="#shop_bags" role="tab" aria-controls="shop_bags" aria-selected="false"><font size="4"><b>عطور</b></font></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="nav_shop_glasses" data-bs-toggle="pill" href="#shop_glasses" role="tab" aria-controls="shop_glasses" aria-selected="false"><font size="4"><b>الاكسسوارات</b></font></a>
-                                </li>
-                            </ul> <!-- end of nav -->
-
+                </div>
 
   <!-- Start of Banner Section -->
-            <div class="banner-section mb-half">
+             <div class="banner-section mb-half">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
@@ -642,19 +341,11 @@
                         </div>
                     </div> <!-- end of row -->
                 </div> <!-- end of container -->
-            </div>
+                </div>
             <!-- End of Banner Section -->
-
-
-
-
-
-
-				</div> <!-- end of container -->
-        	</section>
+            </section>
+				 <!-- end of container -->
         	<!-- End of Categories Section -->
-
-           
         </main>
         <!-- End of Main Content Wrapper -->
 

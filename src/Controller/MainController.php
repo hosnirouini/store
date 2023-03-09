@@ -13,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
 
 class MainController extends AbstractController
 {
@@ -21,14 +22,14 @@ class MainController extends AbstractController
 
     }
     #[Route('/', name: 'app_main')]
-    public function index(ProductRepository $productrep,TopsellersRepository $topsellerrep ,CategoryRepository $categoryrep): Response
+    public function index(ProductRepository $productrep,TopsellersRepository $topsellerrep ): Response
     {
 
-        $product = $categoryrep->findAll();
+
         $topseller = $topsellerrep->findAll();
 
 
-        return $this->render('main/index.html.twig',['topsellers'=>$topseller,'products'=>$product]);
+        return $this->render('main/index.html.twig',['topsellers'=>$topseller]);
     }
     #[Route('/Buyproduct/{id}',name:'buy_now')]
     public function buynow(Product $product,int $id)
@@ -109,8 +110,9 @@ class MainController extends AbstractController
             return $this->render('main/my-account.html.twig');
     }
     #[Route('/user_order_detail',name:'app_user_order_detail')]
-    public function userorderdeails()
+    public function userorderdeails(Security $security)
     {
+        $user = $security->getToken()->getUser();
         return $this->render('main/my-account.html.twig');
     }
     #[Route('/about',name:'app_about')]
@@ -124,9 +126,10 @@ class MainController extends AbstractController
         return $this->render('main/stores.html.twig');
     }
     #[Route('/shop_grid',name:'app_shop')]
-    public function shop_grid()
+    public function shop_grid(CategoryRepository $category)
     {
-        return $this->render('main/shop-grid.html.twig');
+        $products = $category->findBy(['name'=>'عطور']);
+        return $this->render('main/shop-grid.html.twig',['products'=>$products]);
     }
 
     #[Route('/contact',name:'app_contact')]

@@ -53,47 +53,12 @@
 
 
     </head>
-    <body>
 
 
-    <header class="header bgc-white header-type-1">
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 order-2 col-sm-12 order-sm-2 col-md-8 order-md-1 align-self-center">
-                        <p style="color:red" size=""> <b>20٪ خصم. على الانترنت فقط</b></p>
-                    </div>
-                    <div class="col-12 order-1 col-sm-12 order-sm-1 col-md-4 order-md-2">
-                        <ul class="list-inline">
-                            <li class="currency list-inline-item">
-                                <div class="btn-group">
-                                    <button class="btn-link dropdown-toggle"> دينار الكويت <i class="fa fa-angle-down"></i></button>
-                                    <div class="dropdown-menu">
-                                        <ul>
-                                            <li><a href="#" class="current">ريال سعودي</a></li>
-                                            <li><a href="#">Euro €</a></li>
-                                            <li><a href="#">USD $</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="language list-inline-item">
-                                <div class="btn-group">
-                                    <button class="btn-link dropdown-toggle">عربي<i class="fa fa-angle-down"></i></button>
-                                    <div class="dropdown-menu">
-                                        <ul>
-                                            <li><a href="#" class="current"><img src="../../assets/images/icons/ar-gb.png" alt="Icons"> عربي</a></li>
-                                            <li><a href="#"><img src="../../assets/images/icons/en-gb.png" alt="Icons"> إنجليزي</a></li>
-                                            <li><a href="#"><img src="../../assets/images/icons/fr-fr.png" alt="Icons"> الفرنسية</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div> <!-- end of container -->
-        </div> <!-- end of top-bar -->
+    <div id="whole" class="whole-site-wrapper">
+
+        <header class="header bgc-white header-type-1">
+
 
         <div class="header-area">
             <div class="container">
@@ -198,8 +163,41 @@
                                                 <li><a href="{{ path('app_cart') }}">قائمة الرغبات</a></li>
                                                 <li><a href="{{ path('app_checkout') }}">إتمام عملية الشراء</a></li>
                                             </ul>
+
                                         </div>
                                     </div>
+                                </li>
+                            </ul>
+                            <ul class="list-inline">
+                                <li class="top-links list-inline-item">
+                                    <div class="btn-group">
+                                        <button class="btn-link dropdown-toggle"><i class="pe-7s-config"></i></button>
+                                        <div class="dropdown-menu">
+                                            <ul>
+                                                <li><a href="#" class="current">Kuwait KD</a></li>
+                                                <li><a href="#">Euro €</a></li>
+                                                <li><a href="#">USD KD</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </li>
+                            </ul>
+                            <ul class="list-inline">
+                                <li class="top-links list-inline-item">
+                                    <div class="btn-group">
+                                        <button class="btn-link dropdown-toggle"><i class="pe-7s-config"></i></button>
+                                        <div class="dropdown-menu">
+                                            <ul>
+                                                <li><a href="#" class="current"><img src="assets/images/icons/ar-gb.png" alt="Icons"> عربي</a></li>
+                                                <li><a href="#" ><img src="assets/images/icons/en-gb.png" alt="Icons"> إنجليزي</a></li>
+                                                <li><a href="#"><img src="assets/images/icons/fr-fr.png" alt="Icons"> الفرنسية</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
                                 </li>
                             </ul>
                         </div> <!-- end of header-cart-area -->
@@ -228,7 +226,7 @@
                                         <li><a href="{{ path('app_shop') }}"><font size="4">عبايات ملونة</font></a></li>
                                     </ul>
                                     <a class="dd-toggle" href="#"><i class="fa fa-plus"></i></a></li>
-                                <li class="has-sub column column-3"><a href="#" class="mega-menu-title"><h3><font "="" size="5"><b>فساتين</b></font></h3></a>
+                                <li class="has-sub column column-3"><a href="#" class="mega-menu-title"><h3><font size="5"><b>فساتين</b></font></h3></a>
                                     <ul style="max-width: 100%;">
                                         <li><a href="{{ path('app_shop') }}"><font size="4">فساتين المناسبات</font></a></li>
                                         <li><a href="{{ path('app_shop') }}"><font size="4">دراعات</font></a></li>
@@ -262,7 +260,7 @@
                             </ul>
                             <a class="dd-toggle" href="#"><i class="fa fa-plus"></i></a></li>
 
-                        <li><a href="{{ path('app_about') }}"><span><font size="4"><b>عن لمسة حراير</b></font></span></a></li>
+                        <li><a href="{{ path('app_about') }}"><span><font size="4"><b>معلومات عنا</b></font></span></a></li>
                         <li><a href="{{ path('app_contact') }}"><span><font size="4"><b>اتصل بنا</b></font></span></a></li>
                         <li class="has-sub"><a href="#"><span><font size="4"><b>صفحات مفيدة</b></font></span></a>
                             <ul>
@@ -284,7 +282,7 @@
             </div> <!-- end of container -->
         </div>
         <!-- End of Main and Mobile Navigation -->
-    </header>
+     </header>
 
 
 
@@ -628,9 +626,11 @@
         <i class="ion ion-ios-arrow-forward"></i>
     </div>
     <!-- End of Scroll to Top -->
-    </div>
+
     <!-- End of Whole Site Wrapper -->
 
+    </div>
+    <b>
     <!-- Initializing Photoswipe -->
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="pswp__bg"></div>
@@ -670,6 +670,7 @@
     </div>
     <!-- End of Photoswipe -->
 
+
         {% block javascripts %}
             <script src="{{ asset('assets/js/jquery.1.12.4.min.js') }}"></script>
 
@@ -685,5 +686,6 @@
             <!-- Main JS -->
             <script src="{{ asset('assets/js/main.js') }}"></script>
         {% endblock %}
+    </b>
     </body>
 </html>

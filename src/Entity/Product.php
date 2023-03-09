@@ -106,6 +106,9 @@ class Product
     #[ORM\ManyToMany(targetEntity: Size::class, inversedBy: 'products')]
     private Collection $size;
 
+    #[ORM\Column(nullable: true)]
+    private ?float $oldprice = null;
+
 
     public function __construct()
     {
@@ -477,6 +480,18 @@ class Product
     public function removeSize(size $size): self
     {
         $this->size->removeElement($size);
+
+        return $this;
+    }
+
+    public function getOldprice(): ?float
+    {
+        return $this->oldprice;
+    }
+
+    public function setOldprice(?float $oldprice): self
+    {
+        $this->oldprice = $oldprice;
 
         return $this;
     }

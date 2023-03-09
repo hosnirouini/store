@@ -56,6 +56,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $birthdate = null;
 
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $mobilephone = null;
+
 
 
     public function __construct()
@@ -249,6 +252,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setBirthdate(\DateTimeInterface $birthdate): self
     {
         $this->birthdate = $birthdate;
+
+        return $this;
+    }
+
+    public function getMobilephone(): ?string
+    {
+        return $this->mobilephone;
+    }
+
+    public function setMobilephone(?string $mobilephone): self
+    {
+        $this->mobilephone = $mobilephone;
 
         return $this;
     }
